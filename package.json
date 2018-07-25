@@ -11,13 +11,12 @@
   "license": "MIT",
   "scripts": {
     "tdd": "jest --watch",
-    "test": "npm run lint && jest",
-    "testonly": "jest",
+    "test": "npm run lint",
     "build:es": "babel src -d es --env-name esm --ignore **/__tests__ --delete-dir-on-start",
     "build:lib": "babel src -d lib --ignore **/__tests__ --delete-dir-on-start",
     "build": "npm run build:lib && npm run build:es",
     "prepublishOnly": "yarn run build",
-    "lint": "eslint . && prettier --list-different --ignore-path .eslintignore '**/*.{json,css,md}'",
+    "lint": "eslint .",
     "format": "eslint . --fix && prettier --write --ignore-path .eslintignore '**/*.{json,css,md}'",
     "precommit": "lint-staged"
   },
