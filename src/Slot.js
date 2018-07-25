@@ -84,7 +84,7 @@ export default function createSlot() {
     </Consumer>
   ))
 
-  listener ? listener(Provider) : slots.push(Provider)
+  listener ? listener(Provider) : initialSlots.push(Provider)
 
   return { Entry, Outlet }
 }
