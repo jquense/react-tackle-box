@@ -43,15 +43,20 @@
     "roots": [
       "<rootDir>/test"
     ],
+    "setupFiles": [
+      "./test/index.js"
+    ],
     "testEnvironment": "jsdom"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.39",
     "@babel/core": "^7.0.0-beta.39",
+    "@monastic.panic/enzyme-adapter-react-16": "^1.2.4",
     "babel-core": "bridge",
     "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.0",
     "babel-preset-jason": "^4.2.0",
+    "enzyme": "^3.3.0",
     "eslint": "^4.19.1",
     "eslint-config-jason": "^4.0.1",
     "eslint-config-prettier": "^2.9.0",
@@ -62,6 +67,7 @@
     "husky": "^0.14.3",
     "jest": "^23.4.1",
     "lint-staged": "^7.1.0",
+    "mq-polyfill": "^1.1.8",
     "prettier": "^1.10.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
