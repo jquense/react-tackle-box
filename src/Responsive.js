@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const matchers = new Map()
+const matchers = new window.Map()
 
 const defaultBreakpointValues = {
   xs: 0,
@@ -22,8 +22,7 @@ export function createResponsive(breakpointValues) {
       breakpoints.indexOf(breakpoint) + 1,
       breakpoints.length - 1,
     )
-    const px = parseInt(breakpointValues[breakpoints[next]], 10)
-    return `(max-width: ${px - 0.2}px)`
+    return `(max-width: ${breakpointValues[breakpoints[next]] - 0.2}px)`
   }
 
   class Responsive extends React.Component {

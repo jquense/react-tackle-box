@@ -2,7 +2,7 @@
   "name": "react-tackle-box",
   "version": "1.2.0",
   "main": "lib/index.js",
-  "module": "es/index.js",
+  "module": "lib/es/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/jquense/react-tackle-box.git"
@@ -11,14 +11,15 @@
   "license": "MIT",
   "scripts": {
     "tdd": "jest --watch",
-    "test": "npm run lint",
-    "build:es": "babel src -d es --env-name esm --ignore **/__tests__ --delete-dir-on-start",
-    "build:lib": "babel src -d lib --ignore **/__tests__ --delete-dir-on-start",
+    "test": "npm run lint && jest --runInBand",
+    "build:es": "babel src -d lib/es --env-name esm",
+    "build:lib": "babel src -d lib --delete-dir-on-start",
     "build": "npm run build:lib && npm run build:es",
     "prepublishOnly": "yarn run build",
     "lint": "eslint .",
     "format": "eslint . --fix && prettier --write --ignore-path .eslintignore '**/*.{json,css,md}'",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "release": "rollout --publish-dir lib"
   },
   "publishConfig": {
     "access": "public"
@@ -49,31 +50,32 @@
     "testEnvironment": "jsdom"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.39",
-    "@babel/core": "^7.0.0-beta.39",
-    "@monastic.panic/enzyme-adapter-react-16": "^1.2.4",
+    "@4c/rollout": "^1.1.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
     "babel-core": "bridge",
-    "babel-eslint": "^8.2.6",
-    "babel-jest": "^23.4.0",
-    "babel-preset-jason": "^4.2.0",
-    "enzyme": "^3.3.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-jason": "^6.0.1",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^4.19.1",
-    "eslint-config-jason": "^4.0.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.18.0",
+    "eslint-config-jason": "^4.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
     "eslint-plugin-prettier": "^2.5.0",
-    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
-    "jest": "^23.4.1",
-    "lint-staged": "^7.1.0",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.2.2",
     "mq-polyfill": "^1.1.8",
-    "prettier": "^1.10.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "prettier": "^1.14.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
   },
   "dependencies": {
-    "@4c/layout": "^0.1.1"
+    "@4c/layout": "^0.2.0"
   },
   "peerDependencies": {
     "react": "^16.4.1",

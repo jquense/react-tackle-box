@@ -1,5 +1,5 @@
 {
-  "extends": ["jason/react", "prettier"],
+  "extends": ["jason/react", "prettier", "prettier/react"],
   "plugins": ["prettier", "jest"],
   "parser": "babel-eslint",
   "rules": {

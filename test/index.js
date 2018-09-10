@@ -1,7 +1,7 @@
 import Enzyme from 'enzyme'
 import matchMediaPolyfill from 'mq-polyfill'
 
-import Adapter from '@monastic.panic/enzyme-adapter-react-16'
+import Adapter from 'enzyme-adapter-react-16'
 
 matchMediaPolyfill(window)
 
